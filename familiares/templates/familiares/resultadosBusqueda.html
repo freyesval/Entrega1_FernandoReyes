@@ -1,0 +1,31 @@
+{% extends "familiares/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADOS DE LA BUSQUEDA</h1>
+{% endblock %}
+
+
+
+{% block contenido_que_cambia %}
+
+{% if paquetes %}
+<ul>
+    {% for paquete in paquetes %}
+        <li>Nombre del paquete:{{paquete.nombre}}</li>
+        <li>Peso: {{paquete.peso}}</li>
+        <li>Remitente: {{paquete.remitente}}</li>
+        <li>Destinatario: {{paquete.destinatario}}</li>
+        <br>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<p> NO HAY PAQUETES CON ESE NOMBRE!</p>
+
+{% endif %}
+
+{% endblock %}

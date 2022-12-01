@@ -1,0 +1,22 @@
+{% extends "familiares/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Formulario de busqueda de paquetes</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form action="{% url 'buscar' %}" method="GET"> 
+
+    <input type="text" name="nombre" id="nombre">
+
+    <input type="submit" value="buscar paquete">
+
+
+</form>
+{{ mensaje }}
+
+
+{% endblock %}
